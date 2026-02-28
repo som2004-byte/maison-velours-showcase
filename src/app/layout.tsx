@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter, Playfair_Display } from "next/font/google";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 const inter = Inter({
@@ -14,9 +15,12 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Maison Velours",
   description: "A premium perfume showcase.",
+  icons: {
+    icon: "/images/image.jpeg",
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${playfair.variable}`}
-      >
+      <body className={`${inter.variable} ${playfair.variable}`}>
         {children}
       </body>
     </html>
